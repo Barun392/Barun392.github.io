@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barun Mondal - Full Stack Developer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        /* Typography */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
+        h1, h2, h3 {
+            font-weight: 600;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(to right, #4b79a1, #283e51);
+        }
+
+        /* Header */
+        header {
+            background-image: url('assets/img/header-background.jpeg'); /* Replace with your image path */
+            background-size: cover; /* Ensure the image covers the entire header */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+            animation: fadeIn 1.5s ease-out;
+        }
+        header img {
+            border: 5px solid white;
+            animation: fadeInUp 1.5s ease-out;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin-top: 1rem;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Section Styling */
+        section {
+            padding: 4rem 0;
+        }
+        section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #0072ff;
+        }
+
+        /* About Section */
+        #about {
+            background: #f8f9fa;
+            text-align: center;
+        }
+
+        /* Projects Section */
+        #projects .card {
+            transition: transform 0.3s;
+            animation: fadeInUp 1.5s ease-out;
+        }
+        #projects .card:hover {
+            transform: translateY(-10px);
+        }
+        #projects .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain; /* Ensure full image is shown without cropping */
+        }
+
+        /* Employment Section */
+        #employment .company-name {
+            color: #0072ff;
+            font-weight: bold;
+        }
+        #employment .card {
+            margin-bottom: 2rem;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Skills Section */
+        .skill-card img {
+            width: 80px; /* Set a suitable width for skill images */
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+        .skill-card {
+            padding: 1.5rem;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+        .skill-card h4 {
+            color: #0072ff;
+            margin-top: 1rem;
+        }
+
+        /* Contact */
+        #contact {
+            background: #283e51;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: #283e51;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Barun Mondal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#employment">Employment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <img src="assets/img/profile.jpg" class="rounded-circle mb-3" alt="Profile" width="150">
+            <h1>Barun Mondal</h1>
+            <p class="lead">Full-stack Developer | Angular | Flask | PostgreSQL | GCP | Git</p>
+            <a href="#contact" class="btn btn-light btn-lg mt-3">Contact Me</a>
+        </div>
+    </header>
+
+    <!-- About Me -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am a dedicated full-stack developer with nearly 2 years of experience building dynamic and responsive web applications using modern frameworks like Angular, Flask, and PostgreSQL. I specialize in developing scalable, secure, and high-performance applications with a deep understanding of both front-end and back-end technologies.
+
+                Skilled in cloud infrastructure management on Google Cloud Platform (GCP), I have successfully deployed, managed, and optimized cloud-hosted solutions, ensuring smooth performance and scalability. I have hands-on experience in SSL integration and cloud-based security protocols, ensuring that the applications I build are both robust and secure.
+                
+                Beyond technical implementation, I enjoy working on projects that require innovative problem-solving and thrive in collaborative environments, where I can continuously grow and contribute to the success of the team. My passion for coding extends to staying up-to-date with the latest technologies and trends, continually refining my skills in JavaScript, TypeScript, and Python.
+                
+                With a proactive mindset, I approach each project with a commitment to high-quality standards and efficient solutions, striving to build applications that not only meet user needs but also drive business results. I am always looking for new challenges where I can further develop my expertise in cloud computing, data-driven applications, and user-centric design.
+                
+            </p>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card shadow-sm">
+                        <img src="assets/img/exam-platform.png" alt="Exam Platform">
+                        <div class="card-body">
+                            <h5 class="card-title">Exam Platform</h5>
+                            <p class="card-text">An innovative MCQ exam system that supports dynamic question formats, including text, code snippets, and multimedia content. The platform integrates compilers for Python, Java, and SQL, allowing users to execute code seamlessly during the exam. I implemented a partial marking system for questions with multiple correct answers and tracked user activity meticulously, capturing metrics such as time spent on each question and overall exam duration. The result is a detailed post-exam analysis featuring insightful progress graphs. To enhance user experience, I created an intuitive admin panel for dynamic exam creation, enabling both manual and bulk uploads of questions. Additionally, I optimized media storage using GCP, significantly reducing the database load, and introduced a feature that allows users to pause and resume their exams within a specified timeframe, making the platform not only robust but also flexible to user needs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card shadow-sm">
+                        <img src="assets/img/discussion-platform.png" alt="Discussion Platform">
+                        <div class="card-body">
+                            <h5 class="card-title">Collaborative Learning & Discussion Platform</h5>
+                            <p class="card-text">A  versatile platform featuring three distinct sections: public discussions, peer group collaborations, and instructor-led faculty rooms. The public discussion area facilitates a Q&A environment where questions are addressed solely by admins or authorized personnel, allowing for rich interactions supported by media attachments. In the peer group rooms, students can collaborate effectively, discussing assignments and sharing progress within their designated groups. The faculty rooms provide a dedicated space for both internal and external instructors to communicate, share study plans, and distribute educational materials seamlessly. To ensure secure communication and robust access control, the platform is hosted on GCP with SSL encryption, creating a safe and reliable environment for all users. Additionally, the platform incorporates user-friendly navigation and intuitive design, enhancing the overall user experience and engagement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Employment History -->
+    <section id="employment">
+        <div class="container">
+            <h2>Employment History</h2>
+            <div class="card mx-auto p-3" style="max-width: 900px;"> <!-- Centered the card -->
+                <h5 class="company-name">SETU Business School Pvt. Ltd.</h5>
+                <div class="row align-items-center mb-4">
+                    <!-- Employment Details -->
+                    <div class="col-md-15">
+                        <p><strong>Position:</strong> Software Developer</p>
+                        <p><strong>Duration:</strong> May 2023 - Present</p>
+                        <p><strong>Projects:</strong> Developed MCQ exam system with real-time code execution (Python, Java, SQL) and built a dynamic exam creation platform.</p>
+                        <a href="https://setuschool.com/" target="_blank" style="text-decoration: none;">Company Website</a> |
+                        <a href="https://www.linkedin.com/company/setu-school/posts/?feedView=all" target="_blank" style="text-decoration: none;">LinkedIn Page</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <!-- Skills -->
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="row">
+                <!-- Frontend Card -->
+                <div class="col-md-6 mb-4">
+                    <div class="card shadow-sm skill-card">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Frontend</h4>
+                            <div class="row justify-content-center">
+                                <div class="col-2">
+                                    <img src="assets/img/angular-logo.webp" alt="Angular" class="img-fluid">
+                                </div>
+                                <div class="col-2">
+                                    <img src="assets/img/html-logo.png" alt="HTML" class="img-fluid">
+                                </div>
+                                <div class="col-2">
+                                    <img src="assets/img/css-logo.svg" alt="CSS" class="img-fluid">
+                                </div>
+                                <div class="col-2">
+                                    <img src="assets/img/js-logo.png" alt="JavaScript" class="img-fluid">
+                                </div>
+                                <div class="col-2">
+                                    <img src="assets/img/ts-logo.webp" alt="TypeScript" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Backend Card -->
+                <div class="col-md-6 mb-4">
+                    <div class="card shadow-sm skill-card">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Backend</h4>
+                            <div class="row justify-content-center">
+                                <div class="col-3">
+                                    <img src="assets/img/flask-logo.png" alt="Flask" class="img-fluid">
+                                </div>
+                                <div class="col-3">
+                                    <img src="assets/img/django-logo.png" alt="Django" class="img-fluid">
+                                </div>
+                                <div class="col-3">
+                                    <img src="assets/img/python-logo.jpg" alt="Python" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Database Card -->
+                <div class="col-md-6 mb-4">
+                    <div class="card shadow-sm skill-card">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Database</h4>
+                            <div class="row justify-content-center">
+                                <div class="col-3">
+                                    <img src="assets/img/postgresql-logo.jpg" alt="PostgreSQL" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Others Card -->
+                <div class="col-md-6 mb-4">
+                    <div class="card shadow-sm skill-card">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Others</h4>
+                            <div class="row justify-content-center">
+                                <div class="col-3">
+                                    <img src="assets/img/html-logo.png" alt="HTML" class="img-fluid">
+                                </div>
+                                <div class="col-3">
+                                    <img src="assets/img/css-logo.svg" alt="CSS" class="img-fluid">
+                                </div>
+                                <div class="col-3">
+                                    <img src="assets/img/sql-logo.png" alt="SQL" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Cloud Card -->
+                <div class="col-md-6 mb-4">
+                    <div class="card shadow-sm skill-card">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Cloud</h4>
+                            <div class="row justify-content-center">
+                                <div class="col-3">
+                                    <img src="assets/img/gcp-logo.png" alt="Google Cloud Platform" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Version Control Card -->
+                <div class="col-md-6 mb-4">
+                    <div class="card shadow-sm skill-card">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Version Control</h4>
+                            <div class="row justify-content-center">
+                                <div class="col-3">
+                                    <img src="assets/img/git-logo.png" alt="Git" class="img-fluid">
+                                </div>
+                                <div class="col-3">
+                                    <img src="assets/img/bitbucket-logo.png" alt="Bitbucket" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="bg-dark text-light py-5">
+        <div class="container text-center">
+            <h2>Contact Me</h2>
+            <p><a href="mailto:barunmondal392@gmail.com" class="text-light" style="text-decoration: none;">Email: barunmondal392@gmail.com</a> | 
+                Phone: +91 99038 11957</p>
+            <a href="https://www.linkedin.com/in/barun-mondal-0787341b6" class="btn btn-outline-light" target="_blank">LinkedIn Profile</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Barun Mondal - All Rights Reserved</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
