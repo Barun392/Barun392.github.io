@@ -320,6 +320,9 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   cursor: pointer;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  height: 100%; /* Ensure the card fills its container */
 }
 
 .achievement-card:hover {
@@ -333,8 +336,30 @@ body {
 
 .card-body {
   text-align: center;
+  flex: 1; /* Allow the card body to grow */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the content */
+  padding: 10px; /* Add padding */
+  overflow: hidden; /* Prevent overflow */
 }
 
+.card-title,
+.card-text {
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Show ellipsis for overflow */
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-title {
+        font-size: 1rem; /* Smaller title size on mobile */
+    }
+    .card-text {
+        font-size: 0.875rem; /* Smaller text size on mobile */
+    }
+}
 #passwordModal .modal-content {
   background-color: #f9f9f9;
 }
