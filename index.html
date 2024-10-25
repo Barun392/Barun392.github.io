@@ -1,369 +1,581 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barun Mondal - Full Stack Developer</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <style>
-        /* Typography */
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: #333;
-        }
-        h1, h2, h3 {
-            font-weight: 600;
-        }
-
-        /* Navbar */
-        .navbar {
-            background: linear-gradient(to right, #4b79a1, #283e51);
-        }
-
-        /* Header */
-        header {
-            background-image: url('assets/img/header-background.jpeg'); /* Replace with your image path */
-            background-size: cover; /* Ensure the image covers the entire header */
-            background-position: center; /* Center the background image */
-            background-repeat: no-repeat; /* Prevent the image from repeating */
-            color: white;
-            padding: 5rem 0;
-            text-align: center;
-            animation: fadeIn 1.5s ease-out;
-        }
-        header img {
-            border: 5px solid white;
-            animation: fadeInUp 1.5s ease-out;
-        }
-        header h1 {
-            font-size: 3rem;
-            margin-top: 1rem;
-            animation: fadeInUp 1.5s ease-out;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes fadeInUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        /* Section Styling */
-        section {
-            padding: 4rem 0;
-        }
-        section h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #0072ff;
-        }
-
-        /* About Section */
-        #about {
-            background: #f8f9fa;
-            text-align: center;
-        }
-
-        /* Projects Section */
-        #projects .card {
-            transition: transform 0.3s;
-            animation: fadeInUp 1.5s ease-out;
-        }
-        #projects .card:hover {
-            transform: translateY(-10px);
-        }
-        #projects .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: contain; /* Ensure full image is shown without cropping */
-        }
-
-        /* Employment Section */
-        #employment .company-name {
-            color: #0072ff;
-            font-weight: bold;
-        }
-        #employment .card {
-            margin-bottom: 2rem;
-            padding: 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Skills Section */
-        .skill-card img {
-            width: 80px; /* Set a suitable width for skill images */
-            height: 80px;
-            object-fit: contain;
-            margin-bottom: 1rem;
-        }
-        .skill-card {
-            padding: 1.5rem;
-            border-radius: 10px;
-            background: white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .skill-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-        }
-        .skill-card h4 {
-            color: #0072ff;
-            margin-top: 1rem;
-        }
-
-        /* Contact */
-        #contact {
-            background: #283e51;
-            color: white;
-        }
-
-        /* Footer */
-        footer {
-            background: #283e51;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Barun Mondal</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#employment">Employment</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
+  <!-- Header / Hero Section -->
+  <header class="bg-dark text-white py-2">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">My Portfolio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+            <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+            <li class="nav-item"><a class="nav-link" href="#awards">Achievements</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero bg-light text-center py-5" style="background-image: url('assets/img/header-background.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <!-- Profile Picture -->
+    <div class="row justify-content-center">
+        <div class="col-md-4 col-sm-6">
+          <img src="assets/img/profile.jpg" alt="Your Picture" class="img-fluid rounded-circle mb-4 fadeInUp" style="max-width: 150px; border: 5px solid #f7f8fa; border-radius: 50%;">
+        </div>
+      </div>
+      <!-- Name and Title -->
+      <h1 class="display-4 fadeInUp" style="color: #fff; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);"><b>Hello, I'm <span>Barun Mondal</span></b></h1>
+      <p class="lead fadeInUp" style="color: #fff; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);">
+        <b>A passionate <span>Full Stack Developer</span> based in Kolkata.</b>
+      </p>
+      <a href="#projects" class="btn btn-primary btn-lg fadeInUp">View My Work</a>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2 class="text-center">About Me</h2>
+      <p class="text-center">I am a dedicated full-stack developer with nearly 2 years of experience building dynamic and responsive web applications using modern frameworks like Angular, Flask, and PostgreSQL. I specialize in developing scalable, secure, and high-performance applications with a deep understanding of both front-end and back-end technologies.
+
+        Skilled in cloud infrastructure management on Google Cloud Platform (GCP), I have successfully deployed, managed, and optimized cloud-hosted solutions, ensuring smooth performance and scalability. I have hands-on experience in SSL integration and cloud-based security protocols, ensuring that the applications I build are both robust and secure.
+        
+        Beyond technical implementation, I enjoy working on projects that require innovative problem-solving and thrive in collaborative environments, where I can continuously grow and contribute to the success of the team. My passion for coding extends to staying up-to-date with the latest technologies and trends, continually refining my skills in JavaScript, TypeScript, and Python.
+        
+        With a proactive mindset, I approach each project with a commitment to high-quality standards and efficient solutions, striving to build applications that not only meet user needs but also drive business results. I am always looking for new challenges where I can further develop my expertise in cloud computing, data-driven applications, and user-centric design.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="bg-light py-5" style="background-image: url('assets/img/header-background.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="container">
+        <h2 class="text-center mb-4" style="color: #fff; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);">Skills</h2>
+        <div id="skillsCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Carousel Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#skillsCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#skillsCarousel" data-slide-to="1"></li>
+                <li data-target="#skillsCarousel" data-slide-to="2"></li>
+                <li data-target="#skillsCarousel" data-slide-to="3"></li>
+                <li data-target="#skillsCarousel" data-slide-to="4"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="card mb-5 shadow rounded">
+                        <div class="card-body text-center">
+                            <div class="icon mb-3"><i class="fas fa-code fa-2x"></i></div>
+                            <h3 class="card-title">Front-End Development</h3>
+                            <div class="d-flex justify-content-center">
+                                <img src="assets/img/html-logo.png" alt="HTML Logo" class="skill-logo mx-2" />
+                                <img src="assets/img/css-logo.svg" alt="CSS Logo" class="skill-logo mx-2" />
+                                <img src="assets/img/js-logo.png" alt="JavaScript Logo" class="skill-logo mx-2" style="width: 20%!important;"/>
+                                <img src="assets/img/angular-logo.webp" alt="Angular Logo" class="skill-logo mx-2" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card mb-5 shadow rounded">
+                        <div class="card-body text-center">
+                            <div class="icon mb-3"><i class="fas fa-server fa-2x"></i></div>
+                            <h3 class="card-title">Back-End Development</h3>
+                            <div class="d-flex justify-content-center">
+                                <img src="assets/img/flask-logo.png" alt="HTML Logo" class="skill-logo mx-2" style="width: 25%!important;"/>
+                                <img src="assets/img/django-logo.png" alt="CSS Logo" class="skill-logo mx-2" style="width: 20%!important;"/>
+                                <img src="assets/img/python-logo.jpg" alt="JavaScript Logo" class="skill-logo mx-2" style="width: 11%!important;"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card mb-5 shadow rounded">
+                        <div class="card-body text-center">
+                            <div class="icon mb-3"><i class="fas fa-database fa-2x"></i></div>
+                            <h3 class="card-title">Database Implementation</h3>
+                            <div class="d-flex justify-content-center">
+                                <img src="assets/img/postgresql-logo.jpg" alt="HTML Logo" class="skill-logo mx-2" style="width: 25%!important;"/>
+                                <img src="assets/img/sql-logo.png" alt="JavaScript Logo" class="skill-logo mx-2" style="width: 11%!important;"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card mb-5 shadow rounded">
+                        <div class="card-body text-center">
+                            <div class="icon mb-3"><i class="fas fa-tools fa-2x"></i></div>
+                            <h3 class="card-title">Version Control</h3>
+                            <div class="d-flex justify-content-center"style="margin-top:5%">
+                                <img src="assets/img/bitbucket-logo.png" alt="HTML Logo" class="skill-logo mx-2" style="width: 25%!important;"/>
+                                <img src="assets/img/git-logo.png" alt="JavaScript Logo" class="skill-logo mx-2" style="width: 11%!important;"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card mb-5 shadow rounded">
+                        <div class="card-body text-center">
+                            <div class="icon mb-3"><i class="fas fa-cloud fa-2x"></i></div>
+                            <h3 class="card-title">Cloud</h3>
+                            <img src="assets/img/gcp-logo.png" alt="HTML Logo" class="skill-logo mx-2" style="width: 25%!important;"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#skillsCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#skillsCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+  <!-- Projects / Portfolio Section -->
+  <section id="projects" class="py-5">
+    <div class="container">
+      <h2 class="text-center">Projects</h2>
+      <div id="projectsCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Carousel Indicators -->
+        <ol class="carousel-indicators project-carousel-indicators">
+            <li data-target="#projectsCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#projectsCarousel" data-slide-to="1"></li>
+            <li data-target="#projectsCarousel" data-slide-to="2"></li>
+            <li data-target="#projectsCarousel" data-slide-to="3"></li>
+            <li data-target="#projectsCarousel" data-slide-to="4"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="project-card mb-5 rounded">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <h3 class="card-title">MCQ Exam Application</h3>
+                            <i class="fas fa-server fa-2x"></i>
+                        </div>
+                        <div class="description-wrapper">
+                            <p class="project-description">An innovative MCQ exam system that supports dynamic question formats, including text, code snippets, and multimedia content. The platform integrates compilers for Python, Java, and SQL, allowing users to execute code seamlessly during the exam. I implemented a partial marking system for questions with multiple correct answers and tracked user activity meticulously, capturing metrics such as time spent on each question and overall exam duration. The result is a detailed post-exam analysis featuring insightful progress graphs. To enhance user experience, I created an intuitive admin panel for dynamic exam creation, enabling both manual and bulk uploads of questions. Additionally, I optimized media storage using GCP, significantly reducing the database load, and introduced a feature that allows users to pause and resume their exams within a specified timeframe, making the platform not only robust but also flexible to user needs.</p>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-item">
+                <div class="project-card mb-5 rounded">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <h3 class="card-title">Collaborative Learning & Discussion Platform</h3>
+                            <i class="fas fa-server fa-2x"></i>
+                        </div>
+                        <div class="description-wrapper">
+                            <p class="project-description">A versatile platform featuring three distinct sections: public discussions, peer group collaborations, and instructor-led faculty rooms. The public discussion area facilitates a Q&A environment where questions are addressed solely by admins or authorized personnel, allowing for rich interactions supported by media attachments. In the peer group rooms, students can collaborate effectively, discussing assignments and sharing progress within their designated groups. The faculty rooms provide a dedicated space for both internal and external instructors to communicate, share study plans, and distribute educational materials seamlessly. To ensure secure communication and robust access control, the platform is hosted on GCP with SSL encryption, creating a safe and reliable environment for all users. Additionally, the platform incorporates user-friendly navigation and intuitive design, enhancing the overall user experience and engagement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="project-card mb-5 rounded">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <h3 class="card-title">Testing & Documnetation</h3>
+                            <i class="fas fa-server fa-2x"></i>
+                        </div>
+                        <div class="description-wrapper">
+                            <p class="project-description">As a Software Developer with nearly two years of experience, I contributed to the testing of a cloud-based Python and SQL IDE by developing detailed testing reports in Excel that documented test cases, results, and identified issues to enhance product quality. I also assisted team members in creating comprehensive documentation for assigned projects, ensuring consistency and clarity across the board. Through this experience, I honed my skills in testing methodologies, reporting tools, and effective documentation practices while fostering collaboration and knowledge sharing within the team.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="project-card mb-5 rounded">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <h3 class="card-title">Cook & Care</h3>
+                            <i class="fas fa-server fa-2x"></i>
+                        </div>
+                        <div class="description-wrapper" style="background-image: url('assets/img/cook_and_care.jpg'); background-size:cover; background-position: center; background-repeat: no-repeat;filter: blur(0.1px);">
+                            <p class="project-description" style="position: relative; z-index: 1; color: black;">During my master's degree, I developed "Cook & Care," a web application using Django, HTML, CSS, and Bootstrap, aimed at helping users find nearby service providers such as maids, chefs, and nurses, as well as emergency services like ambulances and hospitals. I integrated location tracking using Django's geolocation module (GeoDjango), enabling users to locate service providers and hospitals within a 5km radius. Additionally, I implemented a feature that allows users to contact the nearest hospital or emergency services based on real-time location data. The application features a user-friendly interface designed with Bootstrap, ensuring ease of use and accessibility across various devices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="project-card mb-5 rounded">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <h3 class="card-title">Librariya</h3>
+                            <i class="fas fa-server fa-2x"></i>
+                        </div>
+                        <div class="description-wrapper">
+                            <p class="project-description">During my graduation, I implemented "Librariya," an E-Library management system built with Django, designed to streamline library operations. This comprehensive system enables the library admin to upload a variety of resources, including books, newspapers, thesis papers, blogs, and multimedia files such as audio and video. I developed user functionalities that allow users to rent or purchase items, read books and papers, and access multimedia content directly from their accounts. Additionally, I integrated a request feature, enabling users to request unavailable books or papers directly from the library admin. To enhance administrative efficiency, I also integrated a content management system that empowers admins to manage library resources and events effectively.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#projectsCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#projectsCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    </div>
+  </section>
+
+  <!-- Employment History / Experience Section -->
+  <section id="experience" class="bg-light py-5" style="background-image: url('assets/img/header-background.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="container">
+      <h2 class="text-center mb-4" style="color: #fff; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);">Experience</h2>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="experience-block ">
+            <h3>Software Developer - SETU</h3>
+            <p><i>05th May 2023 - Present</i></p>
+            <div class="current-role">
+                <h2>Contributions</h2>
+                <ul>
+                    <li>
+                        <strong>Exam Platform</strong>
+                        <ul>
+                            <li>Developed a robust MCQ exam system with in-exam code execution in Python, Java, and SQL.</li>
+                            <li>Implemented features for partial marking and question status tracking (answered, seen, unseen).</li>
+                            <li>Built admin functionalities for dynamic exam creation and bulk uploads.</li>
+                            <li>Optimized media storage using Google Cloud Platform (GCP) to reduce database load.</li>
+                            <li>Enabled pause-and-resume functionality for seamless exam experiences.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Discussion Platform</strong>
+                        <ul>
+                            <li>Created sections for public discussions, peer groups, and faculty rooms.</li>
+                            <li>Allowed media attachments in Q&A and shared study plans/resources.</li>
+                            <li>Hosted on GCP with SSL encryption for secure communication.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Additional Responsibilities</strong>
+                        <ul>
+                            <li>Maintained a cloud-based platform for executing data science and machine learning code.</li>
+                            <li>Performed thorough testing and created detailed documentation for projects.</li>
+                            <li>Mentored junior team members, providing logical guidance and support.</li>
+                            <li>Assisted in system setup and supported presentations and data management.</li>
+                            <li>Engaged in collaborative debugging efforts to enhance overall productivity and knowledge sharing.</li>
+                        </ul>
+                    </li>
                 </ul>
+            </div>            
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">Education</h2>
+  
+      <div class="timeline">
+  
+        <!-- MCA -->
+        <div class="timeline-block">
+          <div class="timeline-content d-flex align-items-center">
+            <div class="timeline-img-square">
+              <img src="assets/img/rcciit-logo.png" alt="MCA Institute">
             </div>
-        </div>
-    </nav>
-
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <img src="assets/img/profile.jpg" class="rounded-circle mb-3" alt="Profile" width="150">
-            <h1>Barun Mondal</h1>
-            <p class="lead">Full-stack Developer | Angular | Flask | PostgreSQL | GCP | Git</p>
-            <a href="#contact" class="btn btn-light btn-lg mt-3">Contact Me</a>
-        </div>
-    </header>
-
-    <!-- About Me -->
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>I am a dedicated full-stack developer with nearly 2 years of experience building dynamic and responsive web applications using modern frameworks like Angular, Flask, and PostgreSQL. I specialize in developing scalable, secure, and high-performance applications with a deep understanding of both front-end and back-end technologies.
-
-                Skilled in cloud infrastructure management on Google Cloud Platform (GCP), I have successfully deployed, managed, and optimized cloud-hosted solutions, ensuring smooth performance and scalability. I have hands-on experience in SSL integration and cloud-based security protocols, ensuring that the applications I build are both robust and secure.
-                
-                Beyond technical implementation, I enjoy working on projects that require innovative problem-solving and thrive in collaborative environments, where I can continuously grow and contribute to the success of the team. My passion for coding extends to staying up-to-date with the latest technologies and trends, continually refining my skills in JavaScript, TypeScript, and Python.
-                
-                With a proactive mindset, I approach each project with a commitment to high-quality standards and efficient solutions, striving to build applications that not only meet user needs but also drive business results. I am always looking for new challenges where I can further develop my expertise in cloud computing, data-driven applications, and user-centric design.
-                
-            </p>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card shadow-sm">
-                        <img src="assets/img/exam-platform.png" alt="Exam Platform">
-                        <div class="card-body">
-                            <h5 class="card-title">Exam Platform</h5>
-                            <p class="card-text">An innovative MCQ exam system that supports dynamic question formats, including text, code snippets, and multimedia content. The platform integrates compilers for Python, Java, and SQL, allowing users to execute code seamlessly during the exam. I implemented a partial marking system for questions with multiple correct answers and tracked user activity meticulously, capturing metrics such as time spent on each question and overall exam duration. The result is a detailed post-exam analysis featuring insightful progress graphs. To enhance user experience, I created an intuitive admin panel for dynamic exam creation, enabling both manual and bulk uploads of questions. Additionally, I optimized media storage using GCP, significantly reducing the database load, and introduced a feature that allows users to pause and resume their exams within a specified timeframe, making the platform not only robust but also flexible to user needs.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card shadow-sm">
-                        <img src="assets/img/discussion-platform.png" alt="Discussion Platform">
-                        <div class="card-body">
-                            <h5 class="card-title">Collaborative Learning & Discussion Platform</h5>
-                            <p class="card-text">A  versatile platform featuring three distinct sections: public discussions, peer group collaborations, and instructor-led faculty rooms. The public discussion area facilitates a Q&A environment where questions are addressed solely by admins or authorized personnel, allowing for rich interactions supported by media attachments. In the peer group rooms, students can collaborate effectively, discussing assignments and sharing progress within their designated groups. The faculty rooms provide a dedicated space for both internal and external instructors to communicate, share study plans, and distribute educational materials seamlessly. To ensure secure communication and robust access control, the platform is hosted on GCP with SSL encryption, creating a safe and reliable environment for all users. Additionally, the platform incorporates user-friendly navigation and intuitive design, enhancing the overall user experience and engagement.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="timeline-description">
+              <h3>Master of Computer Application (MCA)</h3>
+              <h4>RCC Institute of Information Technology, Kolkata (2021 – 2023)</h4>
+              <p>CGPA: 9.35
+                <a href="#" onclick="showCertificate('mca')">View Certificate</a>
+              </p>
             </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Employment History -->
-    <section id="employment">
-        <div class="container">
-            <h2>Employment History</h2>
-            <div class="card mx-auto p-3" style="max-width: 900px;"> <!-- Centered the card -->
-                <h5 class="company-name">SETU Business School Pvt. Ltd.</h5>
-                <div class="row align-items-center mb-4">
-                    <!-- Employment Details -->
-                    <div class="col-md-15">
-                        <p><strong>Position:</strong> Software Developer</p>
-                        <p><strong>Duration:</strong> May 2023 - Present</p>
-                        <p><strong>Projects:</strong> Developed MCQ exam system with real-time code execution (Python, Java, SQL) and built a dynamic exam creation platform.</p>
-                        <a href="https://setuschool.com/" target="_blank" style="text-decoration: none;">Company Website</a> |
-                        <a href="https://www.linkedin.com/company/setu-school/posts/?feedView=all" target="_blank" style="text-decoration: none;">LinkedIn Page</a>
-                    </div>
-                </div>
+  
+        <!-- BCA -->
+        <div class="timeline-block">
+          <div class="timeline-content d-flex align-items-center">
+            <div class="timeline-img-square">
+              <img src="assets/img/uem-logo.png" alt="BCA Institute">
             </div>
-        </div>
-    </section>
-
-    <!-- Skills -->
-    <!-- Skills -->
-    <section id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="row">
-                <!-- Frontend Card -->
-                <div class="col-md-6 mb-4">
-                    <div class="card shadow-sm skill-card">
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Frontend</h4>
-                            <div class="row justify-content-center">
-                                <div class="col-2">
-                                    <img src="assets/img/angular-logo.webp" alt="Angular" class="img-fluid">
-                                </div>
-                                <div class="col-2">
-                                    <img src="assets/img/html-logo.png" alt="HTML" class="img-fluid">
-                                </div>
-                                <div class="col-2">
-                                    <img src="assets/img/css-logo.svg" alt="CSS" class="img-fluid">
-                                </div>
-                                <div class="col-2">
-                                    <img src="assets/img/js-logo.png" alt="JavaScript" class="img-fluid">
-                                </div>
-                                <div class="col-2">
-                                    <img src="assets/img/ts-logo.webp" alt="TypeScript" class="img-fluid">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Backend Card -->
-                <div class="col-md-6 mb-4">
-                    <div class="card shadow-sm skill-card">
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Backend</h4>
-                            <div class="row justify-content-center">
-                                <div class="col-3">
-                                    <img src="assets/img/flask-logo.png" alt="Flask" class="img-fluid">
-                                </div>
-                                <div class="col-3">
-                                    <img src="assets/img/django-logo.png" alt="Django" class="img-fluid">
-                                </div>
-                                <div class="col-3">
-                                    <img src="assets/img/python-logo.jpg" alt="Python" class="img-fluid">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Database Card -->
-                <div class="col-md-6 mb-4">
-                    <div class="card shadow-sm skill-card">
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Database</h4>
-                            <div class="row justify-content-center">
-                                <div class="col-3">
-                                    <img src="assets/img/postgresql-logo.jpg" alt="PostgreSQL" class="img-fluid">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Others Card -->
-                <div class="col-md-6 mb-4">
-                    <div class="card shadow-sm skill-card">
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Others</h4>
-                            <div class="row justify-content-center">
-                                <div class="col-3">
-                                    <img src="assets/img/html-logo.png" alt="HTML" class="img-fluid">
-                                </div>
-                                <div class="col-3">
-                                    <img src="assets/img/css-logo.svg" alt="CSS" class="img-fluid">
-                                </div>
-                                <div class="col-3">
-                                    <img src="assets/img/sql-logo.png" alt="SQL" class="img-fluid">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Cloud Card -->
-                <div class="col-md-6 mb-4">
-                    <div class="card shadow-sm skill-card">
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Cloud</h4>
-                            <div class="row justify-content-center">
-                                <div class="col-3">
-                                    <img src="assets/img/gcp-logo.png" alt="Google Cloud Platform" class="img-fluid">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Version Control Card -->
-                <div class="col-md-6 mb-4">
-                    <div class="card shadow-sm skill-card">
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Version Control</h4>
-                            <div class="row justify-content-center">
-                                <div class="col-3">
-                                    <img src="assets/img/git-logo.png" alt="Git" class="img-fluid">
-                                </div>
-                                <div class="col-3">
-                                    <img src="assets/img/bitbucket-logo.png" alt="Bitbucket" class="img-fluid">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="timeline-description">
+              <h3>Bachelor of Computer Application (BCA)</h3>
+              <h4>University of Engineering & Management, Kolkata (2018 – 2021)</h4>
+              <p>CGPA: 9.01
+                <a href="#" onclick="showCertificate('bca')">View Certificate</a> 
+              </p>
             </div>
+          </div>
         </div>
-    </section>
-
-
-    <!-- Contact -->
-    <section id="contact" class="bg-dark text-light py-5">
-        <div class="container text-center">
-            <h2>Contact Me</h2>
-            <p><a href="mailto:barunmondal392@gmail.com" class="text-light" style="text-decoration: none;">Email: barunmondal392@gmail.com</a> | 
-                Phone: +91 99038 11957</p>
-            <a href="https://www.linkedin.com/in/barun-mondal-0787341b6" class="btn btn-outline-light" target="_blank">LinkedIn Profile</a>
+  
+        <!-- 12th -->
+        <div class="timeline-block">
+          <div class="timeline-content d-flex align-items-center">
+            <div class="timeline-img-square">
+              <img src="assets/img/bghs-logo.jpg" alt="High School">
+            </div>
+            <div class="timeline-description">
+              <h3>Higher Secondary (12th)</h3>
+              <h4>Ballygunge Govt. High School, Kolkata (2017 – 2018)</h4>
+              <p>Percentage: 64%
+                <a href="#" onclick="showCertificate('hs')">View Certificate</a> <!-- Link for certificate -->
+              </p>
+            </div>
+          </div>
         </div>
-    </section>
+  
+        <!-- 10th -->
+        <div class="timeline-block">
+          <div class="timeline-content d-flex align-items-center">
+            <div class="timeline-img-square">
+              <img src="assets/img/bghs-logo.jpg" alt="Secondary School">
+            </div>
+            <div class="timeline-description">
+              <h3>Secondary (10th)</h3>
+              <h4>Ballygunge Govt. High School, Kolkata (2015 – 2016)</h4>
+              <p>Percentage: 75.29%
+                <a href="#" onclick="showCertificate('ssc')">View Certificate</a> <!-- Link for certificate -->
+              </p>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Barun Mondal - All Rights Reserved</p>
-    </footer>
+    <div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="passwordModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="passwordModalLabel">Enter Password to View Degree Certificate</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <input type="password" id="degreeModalPasswordInput" class="form-control" placeholder="Enter Password">
+                  <small class="text-danger" id="degreeModalErrorMessage" style="display:none;">Incorrect password. Please try again.</small>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" onclick="verifyDegreeCertificatePassword()">Submit</button>
+              </div>
+          </div>
+      </div>
+  </div>
+    
+  </section>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Certifications / Courses Section -->
+  <!-- <section id="certifications" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center">Certifications / Courses</h2>
+      <ul class="list-unstyled text-center">
+        <li>Full-Stack Web Development - [Certification Authority]</li>
+        <li>Advanced JavaScript - [Certification Authority]</li>
+        <li>Cloud Computing Essentials - [Certification Authority]</li>
+      </ul>
+    </div>
+  </section> -->
+
+  <!-- Testimonials / References Section -->
+  <!-- <section id="testimonials" class="py-5">
+    <div class="container">
+      <h2 class="text-center">Testimonials / References</h2>
+      <div class="row">
+        <div class="col-md-12">
+          <blockquote class="blockquote text-center">
+            <p>"[Your Name] was a pleasure to work with and delivered top-notch results in a timely manner. Highly recommended!" - Reference Name</p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Open Source Contributions Section -->
+  <!-- <section id="opensource" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center">Open Source Contributions</h2>
+      <p class="text-center">Active contributor to open-source projects such as [Project Name]. Worked on bug fixes, performance improvements, and feature additions.</p>
+    </div>
+  </section> -->
+
+  <!-- Awards & Achievements Section -->
+  <section id="awards" class="bg-light py-5" style="background-image: url('assets/img/header-background.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="container">
+      <h2 class="text-center mb-4" style="color: #fff; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);">Achievements</h2>
+      
+      <div class="row">
+        <!-- Achievement 1: Salesforce Shaolin -->
+        <div class="col-md-6 mb-4">
+          <div class="card achievement-card" onclick="showAchievementCertificate('salesforce-shaolin')">
+            <img src="assets/img/salesforce-shaolin-certificate.jpg" class="card-img-top" alt="Salesforce Shaolin">
+            <div class="card-body">
+              <h5 class="card-title">Salesforce Shaolin - Cognizant</h5>
+              <p class="card-text">Digital Nurture 2.0 2022</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Achievement 2: Q-Verse Contribution -->
+        <div class="col-md-6 mb-4">
+          <div class="card achievement-card" onclick="showAchievementCertificate('qverse-contribution')">
+            <img src="assets/img/qverse-certificate.jpg" class="card-img-top" alt="Q-Verse Contribution">
+            <div class="card-body">
+              <h5 class="card-title">Certificate of Recognition - SETU</h5>
+              <p class="card-text">Outstanding Product Development (2024)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Password Modal -->
+    <div class="modal fade" id="achievementPasswordModal" tabindex="-1" role="dialog" aria-labelledby="achievementPasswordModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="achievementPasswordModalLabel">Enter Password to View Achievement Certificate</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <input type="password" id="achievementModalPasswordInput" class="form-control" placeholder="Enter Password">
+                  <small class="text-danger" id="achievementModalErrorMessage" style="display:none;">Incorrect password. Please try again.</small>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" onclick="verifyAchievementCertificatePassword()">Submit</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  </section>
+  
+
+  <!-- Contact Information Section -->
+  <section id="contact" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center">Contact Information</h2>
+      <p class="text-center">Reach out via email: <a href="mailto:barunmondal392@gmail.com">barunmondal392@gmail.com</a> or connect on <a href="https://www.linkedin.com/in/barun-mondal-0787341b6/">LinkedIn</a>.</p>
+      <!-- <form class="row g-3 justify-content-center">
+        <div class="col-md-5">
+          <input type="text" class="form-control" placeholder="Your Name">
+        </div>
+        <div class="col-md-5">
+          <input type="email" class="form-control" placeholder="Your Email">
+        </div>
+        <div class="col-md-10">
+          <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+        </div>
+        <div class="col-md-10 text-center">
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </div>
+      </form> -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+      <p>&copy; 2024 Barun Mondal. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  window.addEventListener('scroll', function() {
+    const blocks = document.querySelectorAll('.timeline-block');
+    const scrollTop = window.scrollY;
+    
+    blocks.forEach((block, index) => {
+      const blockOffsetTop = block.offsetTop;
+      
+      if (scrollTop > blockOffsetTop - window.innerHeight + 150) {
+        setTimeout(() => {
+          block.classList.add('active');
+        }, index * 300); // Delay each block by 300ms
+      }
+    });
+  });
+let selectedDegree = '';
+let selectedAchievement = '';
+
+// For Degree Certificate
+function showCertificate(degree) {
+    selectedDegree = degree; // Store the selected degree
+    document.getElementById('degreeModalPasswordInput').value = '';
+    document.getElementById('degreeModalErrorMessage').style.display = 'none';
+    $('#passwordModal').modal('show');
+}
+
+function verifyDegreeCertificatePassword() {
+    const passwordInput = document.getElementById('degreeModalPasswordInput').value;
+    const correctPassword = {
+        mca: 'MCA2023',
+        bca: 'BCA2021',
+        hs: 'HS2018',
+        ssc: 'SSC2016'
+    };
+
+    // Verify the password
+    if (passwordInput === correctPassword[selectedDegree]) {
+        $('#passwordModal').modal('hide');
+        window.open('assets/certificates/' + selectedDegree + '-certificate.jpg', '_blank');
+    } else {
+        document.getElementById('degreeModalErrorMessage').style.display = 'block';
+    }
+}
+
+// For Achievement Certificate
+function showAchievementCertificate(achievement) {
+    selectedAchievement = achievement;
+    document.getElementById('achievementModalPasswordInput').value = '';
+    document.getElementById('achievementModalErrorMessage').style.display = 'none';
+    $('#achievementPasswordModal').modal('show');
+}
+
+function verifyAchievementCertificatePassword() {
+    const passwordInput = document.getElementById('achievementModalPasswordInput').value;
+    const correctPassword = {
+        'salesforce-shaolin': 'salesforce2022',
+        'qverse-contribution': 'qverse2024'
+    };
+
+    // Verify the password
+    if (passwordInput === correctPassword[selectedAchievement]) {
+        $('#achievementPasswordModal').modal('hide');
+        window.open('assets/certificates/' + selectedAchievement + '-certificate.jpg', '_blank');
+    } else {
+        document.getElementById('achievementModalErrorMessage').style.display = 'block';
+    }
+}
+</script>
 </body>
 </html>
