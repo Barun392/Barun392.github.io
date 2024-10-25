@@ -354,22 +354,3 @@ body {
   display: none; /* Make sure the modal is hidden by default */
 }
 
-.card {
-  margin: 10px; /* Add margin for spacing */
-  border-radius: 10px; /* Optional: Add rounded corners */
-}
-
-.card-title {
-  font-size: 1.2rem; /* Adjust the font size */
-}
-
-.card-text {
-  font-size: 0.9rem; /* Adjust the font size */
-}
-
-/* Responsive adjustments */
-@media (max-width: 576px) {
-  .card {
-      padding: 15px; /* Add padding for smaller screens */
-  }
-}
